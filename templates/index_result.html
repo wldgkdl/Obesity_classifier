@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Analytics Dashboard - This is an example dashboard created using build-in elements and components.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="This is an example dashboard created using build-in elements and components.">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js" integrity="sha512-dnUg2JxjlVoXHVdSMWDYm2Y5xcIrJg1N+juOuRi0yLVkku/g26rwHwysJDAMwahaDfRpr1AxFz43ktuMPr/l1A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!--
+    =========================================================
+    * ArchitectUI HTML Theme Dashboard - v1.0.0
+    =========================================================
+    * Product Page: https://dashboardpack.com
+    * Copyright 2019 DashboardPack (https://dashboardpack.com)
+    * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
+    =========================================================
+    * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    -->
+<link href="./static/css/main.css" rel="stylesheet">
+<link href="./static/css/custom.css" rel="stylesheet"></head>
+<body>
+
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+        <div class="app-header header-shadow">
+            <div class="app-header__logo">
+                <a href = "https://avyuct.com/">
+                <img src = "/static/css/assets/images/logo.png" class = "logo-image">
+                </a>
+                
+            </div>
+
+            <div class="app-header__mobile-menu">
+
+                
+            </div>
+            <div class="app-header__content">
+                <div class="app-header-left">
+                    
+                    <ul class="header-menu nav">
+                        <li class="nav-item" onclick="location.href='https://avyuct.com/'">
+                            <a href="javascript:void(0);" class="nav-link">
+                                
+                                HOME
+                            </a>
+                        </li>
+                        <li class="btn-group nav-item" onclick="location.href='https://avyuct.com/about-us/'">
+                            <a href="javascript:void(0);" class="nav-link">
+                                
+                                ABOUT US
+                            </a>
+                        </li>
+                        <li class="dropdown nav-item" onclick="location.href='https://avyuct.com/partners/'">
+                            <a href="javascript:void(0);" class="nav-link">
+                                
+                                OUR PARTNERS
+                            </a>
+                        </li>
+                        <li class="nav-item" onclick="location.href='https://avyuct.com/avyuct-technologies/'">
+                            <a href="javascript:void(0);" class="nav-link">
+                                
+                                TECHNOLOGIES
+                            </a>
+                        </li>
+                        <li class="btn-group nav-item" onclick="location.href='https://avyuct.com/academy/'">
+                            <a href="javascript:void(0);" class="nav-link">
+                                
+                                ACADEMY
+                            </a>
+                        </li>
+                        <li class="dropdown nav-item" onclick="location.href='https://avyuct.com/blog/'">
+                            <a href="javascript:void(0);" class="nav-link">
+                                
+                                BLOG
+                            </a>
+                        </li>
+                        <li class="dropdown nav-item" onclick="location.href='https://avyuct.com/contact-us/'">
+                            <a href="javascript:void(0);" class="nav-link">
+                                
+                                CONTACT US
+                            </a>
+                        </li>
+                        <li class="dropdown nav-item" onclick="location.href='https://avyuct.com/dashboard/'">
+                            <a href="javascript:void(0);" class="nav-link">
+                                
+                                MY ACCOUNT
+                            </a>
+                        </li>
+                    </ul>        
+                </div>
+                
+            </div>
+        </div>       
+        <div class="app-main">
+            <div class="app-main__outer">
+                <div class="app-main__inner">
+                    <div class="app-page-title">
+                        <div class="page-title-wrapper">
+                            <div class="page-title-heading">
+                                
+                                <div>Prediction of top sectors for the year 2006
+                                    <div class="page-title-subheading">We have used state of the art pre-trained language model and fine-tuned it on approximately 2,000 news articles. The fine-tuned model provides sentiment scores for each news article.
+                                    <br>
+                                    <br>
+
+                                    Using the sentiment scores of news feed data from Jan 2006 to Jun 2006, we are going to predict the top-performing sectors for Jul 2006 - Dec 2006. We compare the recommendation of sentiment score and performance of MSCI past indexes. <br>We evaluate these recommendations with a future MSCI index and help a customer make a sound investment decision.
+                                    </div>
+                                </div>
+                            </div>
+                                </div>
+                    </div>            
+                    <div class="row">
+                        <div class="col-md-6 col-xl-2">
+                            <div class="card mb-3 widget-content bg-midnight-bloom">
+                                <div class="widget-content-wrapper text-white">
+                                    
+                                    <div class="widget-content-center">
+                                        <div class="widget-numbers text-white"><span>Input period </span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-2">
+                            <div class="card mb-3 widget-content">
+                                <div class="widget-content-outer">
+                                    <div class="widget-content-wrapper">
+                                        <div class="widget-content-left">
+                                            <div class="widget-heading">From</div>
+                                
+                                        </div>
+                                        <div class="widget-content-right">
+                                            <div class="widget-numbers text-danger">Jan 2006</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-2">
+                            <div class="card mb-3 widget-content">
+                                <div class="widget-content-outer">
+                                    <div class="widget-content-wrapper">
+                                        <div class="widget-content-left">
+                                            <div class="widget-heading">To</div>
+                                           
+                                        </div>
+                                        <div class="widget-content-right">
+                                            <div class="widget-numbers text-warning">Jun 2006</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-2 d-none d-lg-block">
+                            <div class="card mb-3 widget-content bg-midnight-bloom">
+                                <div class="widget-content-wrapper text-white">
+                                    
+                                    <div class="widget-content-center">
+                                        <div class="widget-numbers text-white"><span>Prediction </span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-2 d-none d-lg-block">
+                            <div class="card mb-3 widget-content">
+                                <div class="widget-content-outer">
+                                    <div class="widget-content-wrapper">
+                                        <div class="widget-content-left">
+                                            <div class="widget-heading">From</div>
+                                
+                                        </div>
+                                        <div class="widget-content-right">
+                                            <div class="widget-numbers text-danger">Jul 2006</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-2 d-none d-lg-block">
+                            <div class="card mb-3 widget-content">
+                                <div class="widget-content-outer">
+                                    <div class="widget-content-wrapper">
+                                        <div class="widget-content-left">
+                                            <div class="widget-heading">To</div>
+                                           
+                                        </div>
+                                        <div class="widget-content-right">
+                                            <div class="widget-numbers text-warning">Dec 2006</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+                    
+                    <div class="row">
+                        
+                        <div class="col-md-12 col-lg-6">
+                            <div class="mb-3 card">
+                                <div class="card-header-tab card-header">
+                                    <div class="card-header-title">
+                                        <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
+                                        Avyuct sentiment score ranking
+                                    </div>
+                                    
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active show" id="tab-eg-55">
+                                        <div class="widget-chart p-3">
+                                            <div style="height: 200">
+                                                <canvas id="sentiment_monthly"></canvas>
+                                            </div>
+                                            <div class="widget-chart-content text-center mt-5">
+                                                <div class="widget-description mt-0 text-warning">
+                                                    <i class="fa fa-arrow-up"></i>
+                                                    
+                                                    <span class="text-muted opacity-8 pl-1">Cumulated sentiment scores</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pt-2 card-body">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="widget-content">
+                                                            <div class="widget-content-outer">
+                                                                <div class="widget-content-wrapper">
+                                                                    <div class="widget-content-left">
+                                                                        <div class="widget-numbers fsize-3 text-muted">{{sentiment_top1[1:-1]}}</div>
+                                                                    </div>
+                                                                    <div class="widget-content-right">
+                                                                        <div class="text-muted opacity-6">Top 1 recommendation</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-progress-wrapper mt-1">
+                                                                    <div class="progress-bar-sm progress-bar-animated-alt progress">
+                                                                        <div class="progress-bar" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" style="width: 100%; background-color: {{s_top1_color[1:-1]}};">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="widget-content">
+                                                            <div class="widget-content-outer">
+                                                                <div class="widget-content-wrapper">
+                                                                    <div class="widget-content-left">
+                                                                        <div class="widget-numbers fsize-3 text-muted">{{sentiment_top2[1:-1]}}</div>
+                                                                    </div>
+                                                                    <div class="widget-content-right">
+                                                                        <div class="text-muted opacity-6">Top 2 recommendation</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-progress-wrapper mt-1">
+                                                                    <div class="progress-bar-sm progress-bar-animated-alt progress">
+                                                                        <div class="progress-bar" role="progressbar" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100" style="width: 100%; background-color: {{s_top2_color[1:-1]}};"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6 d-none d-lg-block">
+                            <div class="mb-3 card">
+                                <div class="card-header-tab card-header">
+                                    <div class="card-header-title">
+                                        <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
+                                        Future MSCI index ranking
+                                    </div>
+                                    
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active show" id="tab-eg-55">
+                                        <div class="widget-chart p-3">
+                                            <div style="height: 200">
+                                                <canvas id="future_index_monthly"></canvas>
+                                            </div>
+                                            <div class="widget-chart-content text-center mt-5">
+                                                <div class="widget-description mt-0 text-warning">
+                                                    <i class="fa fa-arrow-up"></i>
+                                                    
+                                                    <span class="text-muted opacity-8 pl-1">Cumulated future MSCI </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pt-2 card-body">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                        <div class="widget-content">
+                                                            <div class="widget-content-outer">
+                                                                <div class="widget-content-wrapper">
+                                                                    <div class="widget-content-left">
+                                                                        <div class="widget-numbers fsize-3 text-muted">{{future_top1[1:-1]}}</div>
+                                                                    </div>
+                                                                    <div class="widget-content-right">
+                                                                        <div class="text-muted opacity-6">Top 1 </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-progress-wrapper mt-1">
+                                                                    <div class="progress-bar-sm progress-bar-animated-alt progress">
+                                                                        <div class="progress-bar " role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" style="width: 100%; background-color: {{f_top1_color[1:-1]}};"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="widget-content">
+                                                            <div class="widget-content-outer">
+                                                                <div class="widget-content-wrapper">
+                                                                    <div class="widget-content-left">
+                                                                        <div class="widget-numbers fsize-3 text-muted">{{future_top2[1:-1]}}</div>
+                                                                    </div>
+                                                                    <div class="widget-content-right">
+                                                                        <div class="text-muted opacity-6">Top 2 </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-progress-wrapper mt-1">
+                                                                    <div class="progress-bar-sm progress-bar-animated-alt progress">
+                                                                        <div class="progress-bar " role="progressbar" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100" style="width: 100%; background-color: {{f_top2_color[1:-1]}};"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="widget-content">
+                                                            <div class="widget-content-outer">
+                                                                <div class="widget-content-wrapper">
+                                                                    <div class="widget-content-left">
+                                                                        <div class="widget-numbers fsize-3 text-muted">{{future_top3[1:-1]}}</div>
+                                                                    </div>
+                                                                    <div class="widget-content-right">
+                                                                        <div class="text-muted opacity-6">Top 3 </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-progress-wrapper mt-1">
+                                                                    <div class="progress-bar-sm progress-bar-animated-alt progress">
+                                                                        <div class="progress-bar " role="progressbar" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100" style="width: 100%; background-color: {{f_top3_color[1:-1]}};"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="mb-3 card">
+                                <div class="card-header-tab card-header">
+                                    <div class="card-header-title">
+                                        <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
+                                        Past MSCI index ranking
+                                    </div>
+                                    
+                                </div>
+                            <div class="tab-content">
+                                <div class="tab-pane fade active show" id="tab-eg-55">
+                                    <div class="widget-chart p-3">
+                                        <div style="height: 200">
+                                            <canvas id="past_MSCI_monthly"></canvas>
+                                        </div>
+                                        <div class="widget-chart-content text-center mt-5">
+                                            <div class="widget-description mt-0 text-warning">
+                                                <i class="fa fa-arrow-up"></i>
+                                                
+                                                <span class="text-muted opacity-8 pl-1">Cumulated MSCI indexes</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pt-2 card-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="widget-content">
+                                                    <div class="widget-content-outer">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left">
+                                                                <div class="widget-numbers fsize-3 text-muted">{{msci_top1[1:-1]}}</div>
+                                                            </div>
+                                                            <div class="widget-content-right">
+                                                                <div class="text-muted opacity-6">Top 1 recommendation</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget-progress-wrapper mt-1">
+                                                            <div class="progress-bar-sm progress-bar-animated-alt progress">
+                                                                <div class="progress-bar" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" style="width: 100%; background-color: {{m_top1_color[1:-1]}};"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="widget-content">
+                                                    <div class="widget-content-outer">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left">
+                                                                <div class="widget-numbers fsize-3 text-muted">{{msci_top2[1:-1]}}</div>
+                                                            </div>
+                                                            <div class="widget-content-right">
+                                                                <div class="text-muted opacity-6">Top 2 recommendation</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget-progress-wrapper mt-1">
+                                                            <div class="progress-bar-sm progress-bar-animated-alt progress">
+                                                                <div class="progress-bar" role="progressbar" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100" style="width: 100%; background-color: {{m_top2_color[1:-1]}};"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        <div class="row d-md-none">  
+                            <div class="col-md-6 col-xl-4 ">
+                                <div class="card mb-3 widget-content bg-midnight-bloom">
+                                    <div class="widget-content-wrapper text-white">
+                                        
+                                        <div class="widget-content-center">
+                                            <div class="widget-numbers text-white"><span>Prediction Period </span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-4 ">
+                                <div class="card mb-3 widget-content">
+                                    <div class="widget-content-outer">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">From</div>
+                                    
+                                            </div>
+                                            <div class="widget-content-right">
+                                                <div class="widget-numbers text-danger">Jul 2006</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-4">
+                                <div class="card mb-3 widget-content">
+                                    <div class="widget-content-outer">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">To</div>
+                                               
+                                            </div>
+                                            <div class="widget-content-right">
+                                                <div class="widget-numbers text-warning">Dec 2006</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                        <div class="row d-md-none">
+                            <div class="col-md-12 col-lg-12 ">
+                                <div class="mb-3 card">
+                                    <div class="card-header-tab card-header">
+                                        <div class="card-header-title">
+                                            <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
+                                            Future MSCI index ranking
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade active show" id="tab-eg-55">
+                                            <div class="widget-chart p-3">
+                                                <div style="height: 200">
+                                                    <canvas id="future_index_monthly_formobile"></canvas>
+                                                </div>
+                                                <div class="widget-chart-content text-center mt-5">
+                                                    <div class="widget-description mt-0 text-warning">
+                                                        <i class="fa fa-arrow-up"></i>
+                                                        
+                                                        <span class="text-muted opacity-8 pl-1">Cumulated future MSCI </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pt-2 card-body">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                            <div class="widget-content">
+                                                                <div class="widget-content-outer">
+                                                                    <div class="widget-content-wrapper">
+                                                                        <div class="widget-content-left">
+                                                                            <div class="widget-numbers fsize-3 text-muted">{{future_top1[1:-1]}}</div>
+                                                                        </div>
+                                                                        <div class="widget-content-right">
+                                                                            <div class="text-muted opacity-6">Top 1 </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="widget-progress-wrapper mt-1">
+                                                                        <div class="progress-bar-sm progress-bar-animated-alt progress">
+                                                                            <div class="progress-bar " role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" style="width: 100%; background-color: {{f_top1_color[1:-1]}};"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="widget-content">
+                                                                <div class="widget-content-outer">
+                                                                    <div class="widget-content-wrapper">
+                                                                        <div class="widget-content-left">
+                                                                            <div class="widget-numbers fsize-3 text-muted">{{future_top2[1:-1]}}</div>
+                                                                        </div>
+                                                                        <div class="widget-content-right">
+                                                                            <div class="text-muted opacity-6">Top 2 </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="widget-progress-wrapper mt-1">
+                                                                        <div class="progress-bar-sm progress-bar-animated-alt progress">
+                                                                            <div class="progress-bar " role="progressbar" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100" style="width: 100%; background-color: {{f_top2_color[1:-1]}};"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="widget-content">
+                                                                <div class="widget-content-outer">
+                                                                    <div class="widget-content-wrapper">
+                                                                        <div class="widget-content-left">
+                                                                            <div class="widget-numbers fsize-3 text-muted">{{future_top3[1:-1]}}</div>
+                                                                        </div>
+                                                                        <div class="widget-content-right">
+                                                                            <div class="text-muted opacity-6">Top 3 </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="widget-progress-wrapper mt-1">
+                                                                        <div class="progress-bar-sm progress-bar-animated-alt progress">
+                                                                            <div class="progress-bar " role="progressbar" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100" style="width: 100%; background-color: {{f_top3_color[1:-1]}};"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="col-md-12 col-lg-6">
+                            <div class="row d-md-none">
+                                
+                                <div class="col-md-12 ">
+                                        <div class="card mb-3 widget-content bg-midnight-bloom">
+                                            <div class="widget-content-wrapper text-white">
+                                    
+                                                <div class="widget-content-center">
+                                                    <div class="widget-numbers text-white"><span>Sentiment details  </span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>         
+                                <div class="row">
+                                 
+                                    <div class="col-md-6">
+                                        <div class="main-card mb-3 card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{sentiment_top1[1:-1]}} sector</h5>
+                                                <canvas id="doughnut-top1"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="main-card mb-3 card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{sentiment_top2[1:-1]}} sector</h5>
+                                                <canvas id="doughnut-top2"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="main-card mb-3 card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{sentiment_top3[1:-1]}} sector</h5>
+                                                <canvas id="doughnut-top3"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="main-card mb-3 card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{sentiment_top4[1:-1]}} sector</h5>
+                                                <canvas id="doughnut-top4"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 card card-body"><h5 class="card-title">
+
+                                    For more information on our product, please reach out to us at <a href="mailto:info@avyuct.com">info@avyuct.com</a><br>Explore our other products
+                                </h5>   
+                                            <button onclick="location.href='https://avyuct.com/'" class="btn btn-secondary">Our products</button>
+                                        </div>
+                            
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+                <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        </div>
+    </div>
+<script type="text/javascript" src="./static/js/main.js"></script>
+<script>
+    let hidden_info = JSON.parse({{ hidden_info | tojson }})
+
+    let finance_score = JSON.parse({{ finance_score | tojson }})
+    let energy_score = JSON.parse({{ energy_score | tojson }})
+    let health_score = JSON.parse({{ health_score | tojson }})
+    let telecom_score = JSON.parse({{ telecom_score | tojson }})
+    let it_score = JSON.parse({{ it_score | tojson }})
+
+    let past_dates = JSON.parse({{ past_dates | tojson}})
+
+    let index_finance = JSON.parse({{ index_finance | tojson }})
+    let index_energy = JSON.parse({{ index_energy | tojson }})
+    let index_health = JSON.parse({{ index_health | tojson }})
+    let index_telecom = JSON.parse({{ index_telecom | tojson }})
+    let index_it = JSON.parse({{ index_it | tojson }})
+    let index_global = JSON.parse({{ index_global | tojson }})
+
+    let index_future = JSON.parse({{ index_months | tojson }})
+
+    let past_index_finance = JSON.parse({{ past_index_finance | tojson }})
+    let past_index_energy = JSON.parse({{ past_index_energy | tojson }})
+    let past_index_health = JSON.parse({{ past_index_health | tojson }})
+    let past_index_telecom = JSON.parse({{ past_index_telecom | tojson }})
+    let past_index_it = JSON.parse({{ past_index_it | tojson }})
+
+    let sentiment_top1 = JSON.parse({{ sentiment_top1 | tojson }})
+    let sentiment_top2 = JSON.parse({{ sentiment_top2 | tojson }})
+    let sentiment_top3 = JSON.parse({{ sentiment_top3 | tojson }})
+    let sentiment_top4 = JSON.parse({{ sentiment_top4 | tojson }})
+    let msci_top1 = JSON.parse({{ msci_top1 | tojson }})
+    let msci_top2 = JSON.parse({{ msci_top2 | tojson }})
+    let future_top1 = JSON.parse({{ future_top1 | tojson }})
+    let future_top2 = JSON.parse({{ future_top2 | tojson }})
+    let future_top3 = JSON.parse({{ future_top3 | tojson }})
+    let color_information = JSON.parse({{ color_information | tojson }})
+    let s_top1_color = JSON.parse({{ s_top1_color | tojson }})
+    let s_top2_color = JSON.parse({{ s_top2_color | tojson }})
+    let m_top1_color = JSON.parse({{ m_top1_color | tojson }})
+    let m_top2_color = JSON.parse({{ m_top2_color | tojson }})
+    let f_top1_color = JSON.parse({{ f_top1_color | tojson }})
+    let f_top2_color = JSON.parse({{ f_top2_color | tojson }})
+    let f_top3_color = JSON.parse({{ f_top3_color | tojson }})
+    let count_info = JSON.parse({{ count_info | tojson }})
+    
+    new Chart(document.getElementById("sentiment_monthly"), {
+            type: "line",
+            
+            data:
+
+            {labels: past_dates,
+                datasets: 
+                [
+                {
+                label: "Finance Sentiment",
+                data: finance_score,
+                fill: false,
+                borderColor: "rgb(75, 192, 192)",
+                lineTension: 0.1
+                },
+                {
+                label: "Energy Sentiment",
+                data: energy_score,
+                fill: false,
+                borderColor: "rgb(192, 192, 75)",
+                lineTension: 0.1
+                },
+                {
+                label: "Health Sentiment",
+                data: health_score,
+                fill: false,
+                borderColor: "rgb(192, 75, 75)",
+                lineTension: 0.1
+                },
+                {
+                label: "Telecom Sentiment",
+                data: telecom_score,
+                fill: false,
+                borderColor: "rgb(192, 75, 192)",
+                lineTension: 0.1
+                },
+                {
+                label: "IT Sentiment",
+                data: it_score,
+                fill: false,
+                borderColor: "rgb(75, 75, 75)",
+                lineTension: 0.1
+                }
+                ]
+            },showTooltips: true,
+            options: {spanGaps: true}
+        })
+
+    new Chart(document.getElementById("past_MSCI_monthly"), {
+            type: "line",
+            
+            data:
+
+            {labels: past_dates,
+                datasets: 
+                [
+                {
+                label: "Finance past MSCI",
+                data: past_index_finance,
+                
+                fill: false,
+                borderColor: "rgb(75, 192, 192)",
+                lineTension: 0.1
+                },
+                {
+                label: "Energy past MSCI",
+                data: past_index_energy,
+                fill: false,
+                borderColor: "rgb(192, 192, 75)",
+                lineTension: 0.1
+                },
+                {
+                label: "Health past MSCI",
+                data: past_index_health,
+                fill: false,
+                borderColor: "rgb(192, 75, 75)",
+                lineTension: 0.1
+                },
+                {
+                label: "Telecom past MSCI",
+                data: past_index_telecom,
+                fill: false,
+                borderColor: "rgb(192, 75, 192)",
+                lineTension: 0.1
+                },
+                {
+                label: "IT past MSCI",
+                data: past_index_it,
+                fill: false,
+                borderColor: "rgb(75, 75, 75)",
+                lineTension: 0.1
+                }
+                ]
+            },showTooltips: true,
+            options: {spanGaps: true}
+        })
+    new Chart(document.getElementById("future_index_monthly"), {
+            type: "line",
+            
+            data:
+
+            {labels: index_future,
+                datasets: 
+                [
+                {
+                label: "Finance future",
+                data: index_finance,
+                hidden : hidden_info[0],
+                fill: false,
+                borderColor: "rgb(75, 192, 192)",
+                lineTension: 0.1
+                },
+                {
+                label: "Energy future",
+                data: index_energy,
+                hidden : hidden_info[1],
+                fill: false,
+                borderColor: "rgb(192, 192, 75)",
+                lineTension: 0.1
+                },
+                {
+                label: "Health future",
+                data: index_health,
+                hidden : hidden_info[2],
+                fill: false,
+                borderColor: "rgb(192, 75, 75)",
+                lineTension: 0.1
+                },
+                {
+                label: "Telecom future",
+                data: index_telecom,
+                hidden : hidden_info[3],
+                fill: false,
+                borderColor: "rgb(192, 75, 192)",
+                lineTension: 0.1
+                },
+                {
+                label: "IT future",
+                data: index_it,
+                hidden : hidden_info[4],
+                fill: false,
+                borderColor: "rgb(75, 75, 75)",
+                lineTension: 0.1
+                },
+                {
+                label: "GLOBAL future",
+                data: index_global,
+                hidden : false,
+                fill: false,
+                borderColor: "rgb(75, 75, 192)",
+                lineTension: 0.1
+                }
+                ]
+            },showTooltips: true,
+            options: {spanGaps: true}
+        })
+    new Chart(document.getElementById("future_index_monthly_formobile"), {
+            type: "line",
+            
+            data:
+
+            {labels: index_future,
+                datasets: 
+                [
+                {
+                label: "Finance future",
+                data: index_finance,
+                hidden : hidden_info[0],
+                fill: false,
+                borderColor: "rgb(75, 192, 192)",
+                lineTension: 0.1
+                },
+                {
+                label: "Energy future",
+                data: index_energy,
+                hidden : hidden_info[1],
+                fill: false,
+                borderColor: "rgb(192, 192, 75)",
+                lineTension: 0.1
+                },
+                {
+                label: "Health future",
+                data: index_health,
+                hidden : hidden_info[2],
+                fill: false,
+                borderColor: "rgb(192, 75, 75)",
+                lineTension: 0.1
+                },
+                {
+                label: "Telecom future",
+                data: index_telecom,
+                hidden : hidden_info[3],
+                fill: false,
+                borderColor: "rgb(192, 75, 192)",
+                lineTension: 0.1
+                },
+                {
+                label: "IT future",
+                data: index_it,
+                hidden : hidden_info[4],
+                fill: false,
+                borderColor: "rgb(75, 75, 75)",
+                lineTension: 0.1
+                },
+                {
+                label: "GLOBAL future",
+                data: index_global,
+                hidden : false,
+                fill: false,
+                borderColor: "rgb(75, 75, 192)",
+                lineTension: 0.1
+                }
+                ]
+            },showTooltips: true,
+            options: {spanGaps: true}
+        })
+    new Chart(document.getElementById("doughnut-top1"), {
+            type: 'doughnut',
+            data: {
+              labels: ["Positive", "Neutral", "Negative"],
+              datasets: [{
+                label: "Population (millions)",
+                backgroundColor: ["deepskyblue", "khaki","indianred"],
+                data: count_info[0]
+              }]
+            },
+            options: {
+              title: {
+                display: false,
+                text: 'Proportion of articles'
+              }
+            }
+        })
+
+    new Chart(document.getElementById("doughnut-top2"), {
+            type: 'doughnut',
+            data: {
+              labels: ["Positive", "Neutral", "Negative"],
+              datasets: [{
+                label: "Population (millions)",
+                backgroundColor: ["deepskyblue", "khaki","indianred"],
+                data: count_info[1]
+              }]
+            },
+            options: {
+              title: {
+                display: false,
+                text: 'Proportion of articles'
+              }
+            }
+        })
+
+    new Chart(document.getElementById("doughnut-top3"), {
+            type: 'doughnut',
+            data: {
+              labels: ["Positive", "Neutral", "Negative"],
+              datasets: [{
+                label: "Population (millions)",
+                backgroundColor: ["deepskyblue", "khaki","indianred"],
+                data: count_info[2]
+              }]
+            },
+            options: {
+              title: {
+                display: false,
+                text: 'Proportion of articles'
+              }
+            }
+        })
+
+    new Chart(document.getElementById("doughnut-top4"), {
+            type: 'doughnut',
+            data: {
+              labels: ["Positive", "Neutral", "Negative"],
+              datasets: [{
+                label: "Population (millions)",
+                backgroundColor: ["deepskyblue", "khaki","indianred"],
+                data: count_info[3]
+              }]
+            },
+            options: {
+              title: {
+                display: false,
+                text: 'Proportion of articles'
+              }
+            }
+        })
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+</html>
