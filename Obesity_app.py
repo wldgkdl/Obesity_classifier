@@ -15,8 +15,8 @@ from sklearn.naive_bayes import GaussianNB
 from tensorflow.keras.models import load_model
 
 import os
-#os.environ['KMP_DUPLICATE_LIB_OK']='True'
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+os.environ['KMP_DUPLICATE_LIB_OK']='True'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 
 # 1. Decision Tree 
 saved_clf = load('trained_models/clf_after_grid.joblib')
@@ -101,7 +101,7 @@ def form():
 
 
 	
-	return render_template("index.html", height = height, weight = weight)
+	return render_template("index2.html")
 
 
 if __name__ == '__main__':
