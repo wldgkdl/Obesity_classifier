@@ -15,7 +15,7 @@ from sklearn.naive_bayes import GaussianNB
 from tensorflow.keras.models import load_model
 
 import os
-os.environ['KMP_DUPLICATE_LIB_OK']='True'
+#os.environ['KMP_DUPLICATE_LIB_OK']='True'
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 
 # 1. Decision Tree 
@@ -55,6 +55,11 @@ def form():
 	gender = request.form.get('gender')
 	h_unit = request.form.get('Height unit')
 	w_unit = request.form.get('Weight unit')
+	original_h = height
+	original_w = weight
+	original_g = gender
+	w_unit = str("unit: ") + w_unit.capitalize()
+	h_unit = str("unit: ") + h_unit.capitalize()
 
 	# Modify spec based on unit
 	if w_unit == 'lb':
@@ -101,10 +106,15 @@ def form():
 
 
 	
-	return render_template("index2.html")
+	return render_template("index2.html", original_h = original_h,
+		                                  original_w = original_w,
+		                                  original_g = original_g,
+		                                  h_unit = h_unit,
+		                                  w_unit = w_unit)
 
 
 if __name__ == '__main__':
+	os.environ['FLASK_ENV'] = 'development'
 	app.run(debug = True)
 
 

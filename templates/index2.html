@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
+    <title>Check your health !</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./static/images/favicon.png">
     <!-- Pignose Calender -->
     <link href="./static/plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
     <!-- Chartist -->
@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./static/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
     <!-- Custom Stylesheet -->
     <link href="./static/css/style2.css" rel="stylesheet">
+
 
 </head>
 
@@ -45,7 +46,7 @@
         ***********************************-->
         <div class="nav-header">
             <div class="brand-logo">
-                <a href="index.html">
+                <a href="index2.html">
                     <h2 style="color:white;">Contact info</h2>
                 </a>
             </div>
@@ -59,7 +60,7 @@
                     <li class="nav-label">11 AM - 4 PM (EST)</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-envelope menu-icon"></i> <span class="nav-text">Phone</span>
+                            <i class="fas fa-phone-alt"></i> <span class="nav-text">Phone</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a>+1) 703 - 468 - 4665</a></li>
@@ -67,7 +68,7 @@
                     </li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-phone menu-icon"></i> <span class="nav-text">Email</span>
+                            <i class="fas fa-envelope"></i> <span class="nav-text">Email</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a>junghwankim3077@gmail.com</a></li>
@@ -75,7 +76,7 @@
                     </li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="fa fa-git"></i> <span class="nav-text">Repository</span>
+                            <i class="fab fa-git"></i> <span class="nav-text">Repository</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="https://github.com/wldgkdl/Obesity_classifier">https://github.com/wldgkdl</a></li>
@@ -99,46 +100,45 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-1">
                             <div class="card-body">
-                                <h3 class="card-title text-white">Gender</h3>
+                                <h1 class="card-title text-white">Gender</h1>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">4565</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
+                                    <h2 class="text-grey">{{original_g}}</h2>
                                 </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-child"></i></span>
+                                <span class="float-right display-5 opacity-5"><i class="far fa-user-circle"></i></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-2">
                             <div class="card-body">
-                                <h3 class="card-title text-white">Height</h3>
+                                <h1 class="card-title text-white">Height</h1>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">$ 8541</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
+                                    <h2 class="text-grey">{{original_h}}</h2>
+                                    <p class="text-white mb-0">{{h_unit}}</p>
                                 </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-long-arrow-up"></i></span>
+                                <span class="float-right display-5 opacity-5"><i class="fas fa-arrows-alt-v"></i></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-3">
                             <div class="card-body">
-                                <h3 class="card-title text-white">Weight</h3>
+                                <h1 class="card-title text-white">Weight</h1>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">4565</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
+                                    <h2 class="text-grey">{{original_w}}</h2>
+                                    <p class="text-white mb-0">{{w_unit}}</p>
                                 </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-long-arrow-right"></i></span>
+                                <span class="float-right display-5 opacity-5"><i class="fas fa-arrows-alt-h"></i></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-4">
                             <div class="card-body">
-                                <h3 class="card-title text-white">Customer Satisfaction</h3>
+                                <h3 class="card-title text-white">If you want to try one more time</h3>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">99%</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
+                                    <h2 class="text-white">Click here!</h2>
+                                    <p class="text-white mb-0"></p>
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
                             </div>
@@ -346,6 +346,7 @@
     <!-- ChartistJS -->
     <script src="./static/plugins/chartist/js/chartist.min.js"></script>
     <script src="./static/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+    <script src="https://kit.fontawesome.com/dd19c71ac1.js" crossorigin="anonymous"></script>
 
 
 
