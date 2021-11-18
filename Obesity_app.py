@@ -112,8 +112,16 @@ def form():
 		int_proba = int(max(result[0])*100)
 		return int_proba
 
+	def return_color(result):
+		color_info = ['Olive', 'DarkGreen', 'LimeGreen', 'Orange', 'OrangeRed', 'Red']
+		final_color = color_info[result[0]]
+		# ans = '{ "fill": ["color", "#eeeeee"], "innerRadius": 70, "radius": 85 }'
+		# final_color = ans.replace('color', final_color)
+		return final_color
+
 	DT_class = index2class(DT)
 	DT_proba = return_proba(DT_proba)
+	DT_color = return_color(DT)
 
 
 
@@ -125,7 +133,8 @@ def form():
 										  h_unit = h_unit,
 										  w_unit = w_unit,
 										  DT_class = DT_class,
-										  DT_proba = DT_proba)
+										  DT_proba = DT_proba,
+										  DT_color = DT_color)
 
 
 if __name__ == '__main__':
