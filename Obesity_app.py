@@ -79,6 +79,7 @@ def form():
 	data = [gender, height, weight]
 
 	DT = saved_clf.predict([data])
+	DT_proba = saved_clf.predict_proba([data])
 	print("The results of Decision Tree is",DT[0])
 
 	RF = saved_rf.predict([data])
@@ -102,15 +103,29 @@ def form():
 	Ensemble_hard_voted = (DT + RF + SVC + NB + LR + np.argmax(NN))/6
 	print("The results of Ensemble model is",int(round(Ensemble_hard_voted[0])))
 
+	def index2class(result):
+		index_info = ['Extremly weak', 'Weak', 'Normal', 'Overweight','Obesity','Extreme obesity']
+		final_class = index_info[result[0]]
+		return final_class
+
+	def return_proba(result):
+		int_proba = int(max(result[0])*100)
+		return int_proba
+
+	DT_class = index2class(DT)
+	DT_proba = return_proba(DT_proba)
+
 
 
 
 	
 	return render_template("index2.html", original_h = original_h,
-		                                  original_w = original_w,
-		                                  original_g = original_g,
-		                                  h_unit = h_unit,
-		                                  w_unit = w_unit)
+										  original_w = original_w,
+										  original_g = original_g,
+										  h_unit = h_unit,
+										  w_unit = w_unit,
+										  DT_class = DT_class,
+										  DT_proba = DT_proba)
 
 
 if __name__ == '__main__':
