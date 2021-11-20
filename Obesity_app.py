@@ -6,6 +6,7 @@ from sklearn.preprocessing import StandardScaler
 import joblib
 import numpy as np
 import pickle
+from statistics import mode
 
 from sklearn import tree
 from sklearn.ensemble import RandomForestClassifier
@@ -44,102 +45,158 @@ app.secret_key = "wjdghks3#"
 
 @app.route("/spec", methods = ["POST", "GET"])
 def spec():
-	return render_template("question_form.html")
+    return render_template("question_form.html")
 
 @app.route("/form", methods = ["POST"])
 def form():
 
-	# Bring personal spec from the form
-	height = request.form.get('height input')
-	weight = request.form.get('weight input')
-	gender = request.form.get('gender')
-	h_unit = request.form.get('Height unit')
-	w_unit = request.form.get('Weight unit')
-	original_h = height
-	original_w = weight
-	original_g = gender
-	w_unit = str("unit: ") + w_unit.capitalize()
-	h_unit = str("unit: ") + h_unit.capitalize()
+    # Bring personal spec from the form
+    height = request.form.get('height input')
+    weight = request.form.get('weight input')
+    gender = request.form.get('gender')
+    h_unit = request.form.get('Height unit')
+    w_unit = request.form.get('Weight unit')
+    original_h = height
+    original_w = weight
+    original_g = gender
 
-	# Modify spec based on unit
-	if w_unit == 'lb':
-		weight = int(0.453592 * float(weight))
+    # Modify spec based on unit
+    if w_unit == 'lb':
+        weight = int(0.453592 * float(weight))
 
-	if h_unit == 'inches':
-		height = int(2.54 * float(height))
-	elif h_unit == 'feet':
-		height = int(30.48 * float(height))
+    if h_unit == 'inches':
+        height = int(2.54 * float(height))
+    elif h_unit == 'feet':
+        height = int(30.48 * float(height))
 
-	if gender == 'Female':
-		gender = 1
-	else:
-		gender = 0
+    if gender == 'Female':
+        gender = 1
+    else:
+        gender = 0
 
-	# Start inference	
-	data = [gender, height, weight]
+    w_unit = str("unit: ") + w_unit.capitalize()
+    h_unit = str("unit: ") + h_unit.capitalize()
 
-	DT = saved_clf.predict([data])
-	DT_proba = saved_clf.predict_proba([data])
-	print("The results of Decision Tree is",DT[0])
+    # Start inference   
+    data = [gender, height, weight]
 
-	RF = saved_rf.predict([data])
-	print("The results of Random Forest is",RF[0])
+    #DT = saved_clf.predict([data])
+    DT_proba = saved_clf.predict_proba([data])
+    DT = np.argmax(DT_proba[0])
+    #print(DT_proba)
+    #print("The results of Decision Tree is",DT[0])
 
-	SVC = saved_svc.predict([data])
-	print("The results of SVC is",SVC[0])
+    RF_proba = saved_rf.predict_proba([data])
+    RF = np.argmax(RF_proba[0])
+    #print(RF_proba)
+    #print("The results of Random Forest is",RF[0])
+    
+    SVC_proba = saved_svc.predict_proba([data])
+    SVC = np.argmax(SVC_proba[0])
+    #print(SVC_proba)
+    #print("The results of SVC is",SVC[0])
 
-	NB = saved_NB.predict([data])
-	print("The results of Naive Bayes is",NB[0])
+    NB_proba = saved_NB.predict_proba([data])
+    NB = np.argmax(NB_proba[0])
+    #print(NB_proba)
+    #print("The results of Naive Bayes is",NB[0])
 
-	my_scaler = joblib.load('trained_models/scaler.gz')
-	transformed_data = data[:]
+    my_scaler = joblib.load('trained_models/scaler.gz')
+    transformed_data = data[:]
 
-	LR = saved_LR.predict(my_scaler.transform([transformed_data]))
-	print("The results of Logistic Regression is",LR[0])
+    #LR = saved_LR.predict(my_scaler.transform([transformed_data]))
+    LR_proba = saved_LR.predict_proba(my_scaler.transform([transformed_data]))
+    LR = np.argmax(LR_proba[0])
+    #print(LR_proba)
+    #print("The results of Logistic Regression is",LR[0])
 
-	NN = saved_NN.predict(my_scaler.transform([transformed_data]))
-	print("The results of Neural Network is",np.argmax(NN))
+    NN_proba = saved_NN.predict(my_scaler.transform([transformed_data]))
+    NN = np.argmax(NN_proba)
+    #print(NN_proba)
 
-	Ensemble_hard_voted = (DT + RF + SVC + NB + LR + np.argmax(NN))/6
-	print("The results of Ensemble model is",int(round(Ensemble_hard_voted[0])))
+    #print("The results of Neural Network is",np.argmax(NN))
 
-	def index2class(result):
-		index_info = ['Extremly weak', 'Weak', 'Normal', 'Overweight','Obesity','Extreme obesity']
-		final_class = index_info[result[0]]
-		return final_class
+    #Ensemble_hard_voted = (DT + RF + SVC + NB + LR + NN)/6
+    Ensemble_hard_voted = mode([DT ,RF ,SVC ,NB ,LR ,NN])
+    len_hard_voted = [DT ,RF ,SVC ,NB ,LR ,NN].count(Ensemble_hard_voted)
+    if len_hard_voted < 3:
+        Ensemble_hard_voted = round((DT + RF + SVC + NB + LR + NN)/6)
+    #print(len_hard_voted)
+    #print("The results of Ensemble model is",int(round(Ensemble_hard_voted[0])))
 
-	def return_proba(result):
-		int_proba = int(max(result[0])*100)
-		return int_proba
+    def index2class(result):
+        index_info = ['Extremly weak', 'Weak', 'Normal', 'Overweight','Obesity','Extreme obesity']
+        final_class = index_info[result]
+        return final_class
 
-	def return_color(result):
-		color_info = ['Olive', 'DarkGreen', 'LimeGreen', 'Orange', 'OrangeRed', 'Red']
-		final_color = color_info[result[0]]
-		# ans = '{ "fill": ["color", "#eeeeee"], "innerRadius": 70, "radius": 85 }'
-		# final_color = ans.replace('color', final_color)
-		return final_color
+    def return_proba(result):
+        int_proba = int(max(result[0])*100)
+        return int_proba
 
-	DT_class = index2class(DT)
-	DT_proba = return_proba(DT_proba)
-	DT_color = return_color(DT)
+    def return_color(result):
+        color_info = ['Olive', 'DarkGreen', 'LimeGreen', 'Orange', 'OrangeRed', 'Red']
+        final_color = color_info[result]
+        # ans = '{ "fill": ["color", "#eeeeee"], "innerRadius": 70, "radius": 85 }'
+        # final_color = ans.replace('color', final_color)
+        return final_color
 
+    DT_class = index2class(DT)
+    DT_proba = return_proba(DT_proba)
+    DT_color = return_color(DT)
 
+    RF_class = index2class(RF)
+    RF_proba = return_proba(RF_proba)
+    RF_color = return_color(RF)
 
+    SVC_class = index2class(SVC)
+    SVC_proba = return_proba(SVC_proba)
+    SVC_color = return_color(SVC)
 
-	
-	return render_template("index2.html", original_h = original_h,
-										  original_w = original_w,
-										  original_g = original_g,
-										  h_unit = h_unit,
-										  w_unit = w_unit,
-										  DT_class = DT_class,
-										  DT_proba = DT_proba,
-										  DT_color = DT_color)
+    NB_class = index2class(NB)
+    NB_proba = return_proba(NB_proba)
+    NB_color = return_color(NB)
+
+    LR_class = index2class(LR)
+    LR_proba = return_proba(LR_proba)
+    LR_color = return_color(LR)
+
+    NN_class = index2class(NN)
+    NN_proba = return_proba(NN_proba)
+    NN_color = return_color(NN)
+
+    Final_class = index2class(Ensemble_hard_voted)
+    Final_color = return_color(Ensemble_hard_voted)
+
+    return render_template("index2.html", original_h = original_h,
+                                          original_w = original_w,
+                                          original_g = original_g,
+                                          h_unit = h_unit,
+                                          w_unit = w_unit,
+                                          DT_class = DT_class,
+                                          DT_proba = DT_proba,
+                                          DT_color = DT_color,
+                                          RF_class = RF_class,
+                                          RF_proba = RF_proba,
+                                          RF_color = RF_color,
+                                          SVC_class = SVC_class,
+                                          SVC_proba = SVC_proba,
+                                          SVC_color = SVC_color,
+                                          NB_class = NB_class,
+                                          NB_proba = NB_proba,
+                                          NB_color = NB_color,
+                                          LR_class = LR_class,
+                                          LR_proba = LR_proba,
+                                          LR_color = LR_color,
+                                          NN_class = NN_class,
+                                          NN_proba = NN_proba,
+                                          NN_color = NN_color,
+                                          Final_class = Final_class,
+                                          Final_color = Final_color)
 
 
 if __name__ == '__main__':
-	os.environ['FLASK_ENV'] = 'development'
-	app.run(debug = True)
+    os.environ['FLASK_ENV'] = 'development'
+    app.run(debug = True)
 
 
 

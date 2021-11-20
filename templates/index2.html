@@ -167,11 +167,14 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <h5 class="mt-3 mb-1">Decison tree</h5>
-                                    <p class="m-0">{{DT_class}}</p>
-                                    <!-- <a href="javascript:void()" class="btn btn-sm btn-warning">Send Message</a> --><br>
-                                    <span class="data-attr" data-peity='{ "fill": ["LimeGreen", "#eeeeee"], "innerRadius": 70, "radius": 85 }'>{{DT_proba}}/100
+                                    <h5 class="mt-3 mb-1">Random Forest</h5>
+                                    <p class="m-0">{{RF_class}}</p>
+                                    <br>
+                                    <span class="data-attr" data-peity='{ "fill": ["{{RF_color}}", "#eeeeee"], "innerRadius": 70, "radius": 85 }'>{{RF_proba}}/100
                                     </span>
+                                    <br>
+                                    <br>
+                                    <p class="m-0">Gauge indicates confidence level of prediction</p>
                                 </div>
                             </div>
                         </div>
@@ -180,10 +183,51 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <img src="./images/users/7.jpg" class="rounded-circle" alt="">
-                                    <h5 class="mt-3 mb-1">John Doe</h5>
-                                    <p class="m-0">Sales Man</p>
-                                    <!-- <a href="javascript:void()" class="btn btn-sm btn-warning">Send Message</a> -->
+                                    <h5 class="mt-3 mb-1">Support Vector Machine</h5>
+                                    <p class="m-0">{{SVC_class}}</p>
+                                    <br>
+                                    <span class="data-attr" data-peity='{ "fill": ["{{SVC_color}}", "#eeeeee"], "innerRadius": 70, "radius": 85 }'>{{SVC_proba}}/100
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <p class="m-0">Gauge indicates confidence level of prediction</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <h5 class="mt-3 mb-1">Naive Bayes</h5>
+                                    <p class="m-0">{{NB_class}}</p>
+                                    <br>
+                                    <span class="data-attr" data-peity='{ "fill": ["{{NB_color}}", "#eeeeee"], "innerRadius": 70, "radius": 85 }'>{{NB_proba}}/100
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <p class="m-0">Gauge indicates confidence level of prediction</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <h5 class="mt-3 mb-1">Logistic Regression</h5>
+                                    <p class="m-0">{{LR_class}}</p>
+                                    <br>
+                                    <span class="data-attr" data-peity='{ "fill": ["{{LR_color}}", "#eeeeee"], "innerRadius": 70, "radius": 85 }'>{{LR_proba}}/100
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <p class="m-0">Gauge indicates confidence level of prediction</p>
                                 </div>
                             </div>
                         </div>
@@ -192,10 +236,30 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <img src="./images/users/1.jpg" class="rounded-circle" alt="">
-                                    <h5 class="mt-3 mb-1">Mehedi Titas</h5>
-                                    <p class="m-0">Online Marketer</p>
-                                    <!-- <a href="javascript:void()" class="btn btn-sm btn-warning">Send Message</a> -->
+                                    <h5 class="mt-3 mb-1">Neural Network</h5>
+                                    <p class="m-0">{{NN_class}}</p>
+                                    <br>
+                                    <span class="data-attr" data-peity='{ "fill": ["{{NN_color}}", "#eeeeee"], "innerRadius": 70, "radius": 85 }'>{{NN_proba}}/100
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <p class="m-0">Gauge indicates confidence level of prediction</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <h5 class="mt-3 mb-1">Final Result</h5>
+                                    <p class="m-0">{{Final_class}}</p>
+                                    <br>
+                                    <span class="data-attr" data-peity='{ "fill": ["{{Final_color}}", "#eeeeee"], "radius": 85 }'>100/100
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <p class="m-0">Gauge indicates confidence level of prediction</p>
                                 </div>
                             </div>
                         </div>
