@@ -132,7 +132,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6">
+<!--                     <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-4">
                             <div class="card-body">
                                 <h3 class="card-title text-white">If you want to try one more time</h3>
@@ -143,7 +143,7 @@
                                 
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 
                 <div class="row">
@@ -252,7 +252,24 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <h5 class="mt-3 mb-1">Final Result</h5>
+                                    <span class="display-2"><i class="fas fa-grip-horizontal"></i></span>
+                                    <h1 class="mt-3" style = "color:{{Final_color}}">{{Final_class}}</h1>
+                                    <br>
+                                    <h6>As a result of synthesizing the prediction results of 6 machine learning models through hard voting, it was determined that you are {{Final_class}}. <br>
+                                    If you want to test this application again, please click the button below.</h6>
+                                    <br>
+                                    <a href="/spec" class="btn gradient-9 btn-lg border-0 btn-rounded px-5">
+                                        Try again !
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <h5 class="mt-3 mb-1">Ensemble model</h5>
                                     <p class="m-0">{{Final_class}}</p>
                                     <br>
                                     <span class="data-attr" data-peity='{ "fill": ["{{Final_color}}", "#eeeeee"], "radius": 85 }'>100/100
@@ -263,107 +280,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                </div>
-
-                <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-6">
-
-                        <div class="card">
-                            <div class="chart-wrapper mb-4">
-                                <div class="px-4 pt-4 d-flex justify-content-between">
-                                    <div>
-                                        <h4>Sales Activities</h4>
-                                        <p>Last 6 Month</p>
-                                    </div>
-                                    <div>
-                                        <span><i class="fa fa-caret-up text-success"></i></span>
-                                        <h4 class="d-inline-block text-success">720</h4>
-                                        <p class=" text-danger">+120.5(5.0%)</p>
-                                    </div>
-                                </div>
-                                <div>
-                                        <canvas id="chart_widget_3"></canvas>
-                                </div>
-                            </div>
-                            <div class="card-body border-top pt-4">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <ul>
-                                            <li>5% Negative Feedback</li>
-                                            <li>95% Positive Feedback</li>
-                                        </ul>
-                                        <div>
-                                            <h5>Customer Feedback</h5>
-                                            <h3>385749</h3>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div id="chart_widget_3_1"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Activity</h4>
-                                <div id="activity">
-                                    <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/1.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <h5>Received New Order</h5>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                    <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <h5>iPhone develered</h5>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                    <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <h5>3 Order Pending</h5>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                    <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <h5>Join new Manager</h5>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                    <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <h5>Branch open 5 min Late</h5>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                    <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <h5>New support ticket received</h5>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                    <div class="media pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/3.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <h5>Facebook Post 30 Comments</h5>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!-- #/ container -->
@@ -378,7 +295,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
+                <p>Copyright &copy; Designed & Developed by <a href="https://github.com/wldgkdl">Junghwan Kim</a> </p>
             </div>
         </div>
         <!--**********************************

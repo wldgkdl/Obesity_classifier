@@ -74,8 +74,8 @@ def form():
     else:
         gender = 0
 
-    w_unit = str("unit: ") + w_unit.capitalize()
-    h_unit = str("unit: ") + h_unit.capitalize()
+    w_unit = str("Unit: ") + w_unit
+    h_unit = str("Unit: ") + h_unit
 
     # Start inference   
     data = [gender, height, weight]
