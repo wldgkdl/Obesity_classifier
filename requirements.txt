@@ -99,7 +99,7 @@ Send2Trash==1.8.0
 setuptools==58.0.4
 six==1.16.0
 sniffio==1.2.0
-tensorboard==2.0.0
+tensorboard==2.1.0
 tensorflow-cpu==2.1.0
 tensorflow-estimator==2.1.0
 termcolor==1.1.0
