@@ -13,7 +13,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.naive_bayes import GaussianNB
-#from tensorflow.keras.models import load_model
+from tensorflow.keras.models import load_model
 
 import os
 #os.environ['KMP_DUPLICATE_LIB_OK']='True'
@@ -35,7 +35,7 @@ saved_svc = load('trained_models/svc.joblib')
 saved_NB = load('trained_models/nb.joblib')
 
 # 6. Neural Network
-#saved_NN = load_model('trained_models/trained_NN.h5')
+saved_NN = load_model('trained_models/trained_NN.h5')
 
 
 
@@ -110,18 +110,18 @@ def form():
     #print(LR_proba)
     #print("The results of Logistic Regression is",LR[0])
 
-    # NN_proba = saved_NN.predict(my_scaler.transform([transformed_data]))
-    # NN = np.argmax(NN_proba)
+    NN_proba = saved_NN.predict(my_scaler.transform([transformed_data]))
+    NN = np.argmax(NN_proba)
     #print(NN_proba)
 
     #print("The results of Neural Network is",np.argmax(NN))
 
     #Ensemble_hard_voted = (DT + RF + SVC + NB + LR + NN)/6
 
-    # Ensemble_hard_voted = mode([DT ,RF ,SVC ,NB ,LR ,NN])
-    # len_hard_voted = [DT ,RF ,SVC ,NB ,LR ,NN].count(Ensemble_hard_voted)
-    # if len_hard_voted < 3:
-    #     Ensemble_hard_voted = round((DT + RF + SVC + NB + LR + NN)/6)
+    Ensemble_hard_voted = mode([DT ,RF ,SVC ,NB ,LR ,NN])
+    len_hard_voted = [DT ,RF ,SVC ,NB ,LR ,NN].count(Ensemble_hard_voted)
+    if len_hard_voted < 3:
+        Ensemble_hard_voted = round((DT + RF + SVC + NB + LR + NN)/6)
 
     #print(len_hard_voted)
     #print("The results of Ensemble model is",int(round(Ensemble_hard_voted[0])))
@@ -162,12 +162,12 @@ def form():
     LR_proba = return_proba(LR_proba)
     LR_color = return_color(LR)
 
-    # NN_class = index2class(NN)
-    # NN_proba = return_proba(NN_proba)
-    # NN_color = return_color(NN)
+    NN_class = index2class(NN)
+    NN_proba = return_proba(NN_proba)
+    NN_color = return_color(NN)
 
-    # Final_class = index2class(Ensemble_hard_voted)
-    # Final_color = return_color(Ensemble_hard_voted)
+    Final_class = index2class(Ensemble_hard_voted)
+    Final_color = return_color(Ensemble_hard_voted)
 
     return render_template("index2.html", original_h = original_h,
                                           original_w = original_w,
@@ -189,11 +189,11 @@ def form():
                                           LR_class = LR_class,
                                           LR_proba = LR_proba,
                                           LR_color = LR_color,
-                                          # NN_class = NN_class,
-                                          # NN_proba = NN_proba,
-                                          # NN_color = NN_color,
-                                          # Final_class = Final_class,
-                                          # Final_color = Final_color
+                                          NN_class = NN_class,
+                                          NN_proba = NN_proba,
+                                          NN_color = NN_color,
+                                          Final_class = Final_class,
+                                          Final_color = Final_color
                                           )
 
 
