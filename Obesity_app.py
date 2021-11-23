@@ -6,7 +6,7 @@ from sklearn.preprocessing import StandardScaler
 import joblib
 import numpy as np
 import pickle
-#from statistics import mode
+from statistics import mode
 
 from sklearn import tree
 from sklearn.ensemble import RandomForestClassifier
