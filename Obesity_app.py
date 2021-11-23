@@ -127,7 +127,7 @@ def form():
     #print("The results of Ensemble model is",int(round(Ensemble_hard_voted[0])))
 
     def index2class(result):
-        index_info = ['Extremly weak', 'Weak', 'Normal', 'Overweight','Obesity','Extreme obesity']
+        index_info = ['Weak', 'Slim', 'Normal', 'Overweight','Obesity','Extreme obesity']
         final_class = index_info[result]
         return final_class
 
