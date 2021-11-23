@@ -17,7 +17,7 @@ from tensorflow.keras.models import load_model
 
 import os
 #os.environ['KMP_DUPLICATE_LIB_OK']='True'
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
+#os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 
 # 1. Decision Tree 
 saved_clf = load('trained_models/clf_after_grid.joblib')
@@ -195,7 +195,7 @@ def form():
 
 
 if __name__ == '__main__':
-    os.environ['FLASK_ENV'] = 'development'
+    #os.environ['FLASK_ENV'] = 'development'
     app.run(debug = True)
 
 
